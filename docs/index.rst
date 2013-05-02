@@ -8,7 +8,7 @@ Welcome to Gradient X API Documentation's documentation!
 
 Contents:
 
-Something in contents
+Something in contents. and something more
 
 .. toctree::
     :maxdepth: 2
