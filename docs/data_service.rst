@@ -78,6 +78,7 @@ Get Schema Details
     ``GET api.gradientx.com/a/feed/schema/<schema_id>``
 
 Other Methods to Query
+
 * ``feed_id``
 * ``ver``
 
@@ -96,5 +97,6 @@ Response::
     }
 
 Notes
+
 #. Either the schema_id or *BOTH* ``feed_id`` && ``ver`` parameters are required.
 
