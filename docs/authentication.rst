@@ -3,12 +3,13 @@
 OAuth2 Authentication
 =====================
 
+.. attention:: All requests must use secure https (SSL)
+
 General Steps
 -------------
 
-.. attention:: All requests must use secure https (SSL)
-
 This is for two-legged authentication
+
 # Obtain an authorization key
 # With authorization_key, client_key, client_secret, obtain access_token
 # Set access_token and client_key headers with all subsequent request for data
@@ -20,6 +21,7 @@ Authorization Key
     ``GET https://api.gradientx.com/a/oauth/authorize``
 
 Required Query String Parameters
+
 * ``client_id`` This is your API key that Gradient X will provide
 * ``response_type`` This will *ALWAYS* be "code"
 * ``redirect_uri`` Set this to ``https://api.gradientx.com/a/oauth/mirror`` for
@@ -36,6 +38,7 @@ Access Token
     ``POST https://api.gradientx.com/a/oauth/token``
 
 Required POST form-arguments
+
 * ``client_id`` Same as the one used for authorization
 * ``client_secret`` Provided by Gradient X
 * ``grant_type`` Always set to ``authorization_code``
@@ -54,6 +57,7 @@ Authenticated Request
 ---------------------
 
 Set request headers:
+
 * ``authorization`` Set this to ``Bearer <access_token>``
 * ``client_id`` Provided by GradientX
 
@@ -65,6 +69,7 @@ Example Python Script
 ---------------------
 
 This Python script will authenticate and do a sample protected request
+
 .. code-block:: python
 
     import requests
