@@ -13,8 +13,6 @@ Something in contents, but something has changed
 .. toctree::
     :maxdepth: 2
 
-    intro
-    tutorial
     data_service
 
 
@@ -23,7 +21,7 @@ Something in contents, but something has changed
 Indices and tables
 ==================
 
-* :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
+..  * :ref:`genindex`
+    * :ref:`modindex`
 
