@@ -9,7 +9,7 @@ Welcome to Gradient X API Documentation's documentation!
 Contents:
 
 .. toctree::
-   :maxdepth: 2
+    :maxdepth: 2
    
     intro
     tutorial
