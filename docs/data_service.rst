@@ -3,14 +3,6 @@
 Data Service API
 ================
 
-Access Point
------------------
-
-::
-
-    api.gradientx.com/a/feed/
-    api.gradientx.com/a/feed/<feed_name>
-
 Get a List of all Feeds
 -----------------------
 
@@ -18,9 +10,14 @@ Get a List of all Feeds
 
     GET api.gradientx.com/a/feed/
 
+Response::
 
-
-
+    {
+        "1": "pacing_report", 
+        "2": "Billing Report", 
+        "3": "Traffic Quality Report", 
+        "4": "Monthly User Report"
+    } 
 
 Get Feed by feed_name
 ---------------------
@@ -72,5 +69,32 @@ Notes
 #. Specifying only start_date will yield every batch report since that start_date
 #. Specifying only end_date will yield every batch report up until and including that end_date
 #. Specifying both will yield batch reports within that range inclusively
-#. Dates are treated as midnight of that day (e.g. 2013-02-13 => 2013-02-13 00:00:00)
+#. Dates are treated as midnight of that day (e.g. 2013-02-13 == 2013-02-13 00:00:00)
+
+
+Get Schema Details
+------------------
+
+    ``GET api.gradientx.com/a/feed/schema/<schema_id>``
+
+Other Methods to Query
+* ``feed_id``
+* ``ver``
+
+Examples::
+    
+    GET api.gradientx.com/a/feed/schema?feed_id=1&ver=2
+    GET api.gradientx.com/a/feed/schema/3
+
+Response::
+
+    {
+        "version": 2, 
+        "feed_schema_id": 1, 
+        "feed_id": 1, 
+        "columns": "impressions int, clicks int"
+    }
+
+Notes
+#. Either the schema_id or *BOTH* ``feed_id`` && ``ver`` parameters are required.
 
