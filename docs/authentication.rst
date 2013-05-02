@@ -23,8 +23,8 @@ Authorization Key
 Required Query String Parameters
 
 * ``client_id`` This is your API key that Gradient X will provide
-* ``response_type`` This will *ALWAYS* be "code"
-* ``redirect_uri`` Set this to ``https://api.gradientx.com/a/oauth/mirror`` for
+* ``response_type`` This will **ALWAYS** be ``"code"``
+* ``redirect_uri`` Set this to ``"https://api.gradientx.com/a/oauth/mirror"`` for
   2-legged authorization
 
 Response::
@@ -41,8 +41,8 @@ Required POST form-arguments
 
 * ``client_id`` Same as the one used for authorization
 * ``client_secret`` Provided by Gradient X
-* ``grant_type`` Always set to ``authorization_code``
-* ``redirect_uri`` Set to ``https://api.gradientx.com/a/oauth/mirror`` for
+* ``grant_type`` Always set to ``"authorization_code"``
+* ``redirect_uri`` Set to ``"https://api.gradientx.com/a/oauth/mirror"`` for
   2-legged authorization
 * ``code`` Authorization code obtained in the previous step
 
@@ -58,7 +58,7 @@ Authenticated Request
 
 Set request headers:
 
-* ``authorization`` Set this to ``Bearer <access_token>``
+* ``authorization`` Set this to ``"Bearer <access_token>"``
 * ``client_id`` Provided by GradientX
 
 Here is a production test url to test your authentiation process
