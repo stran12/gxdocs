@@ -9,6 +9,7 @@ Welcome to Gradient X API Documentation's documentation!
 Contents:
 
 Something in contents, but something has changed
+`page1`
 
 .. toctree::
     :maxdepth: 2
