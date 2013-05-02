@@ -8,9 +8,11 @@ Welcome to Gradient X API Documentation's documentation!
 
 Contents:
 
+Something in contents
+
 .. toctree::
     :maxdepth: 2
-   
+
     intro
     tutorial
 
