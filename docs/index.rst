@@ -14,10 +14,9 @@ Something in contents, but something has changed
     :maxdepth: 2
 
     intro
+    tutorial
+    examples
 
-
-:ref:`intro`
-===================
 
 
 
