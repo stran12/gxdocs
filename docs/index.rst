@@ -9,12 +9,16 @@ Welcome to Gradient X API Documentation's documentation!
 Contents:
 
 Something in contents, but something has changed
-:ref:`page1`
 
 .. toctree::
     :maxdepth: 2
 
     intro
+
+
+:ref:`intro`
+===================
+
 
 
 Indices and tables
