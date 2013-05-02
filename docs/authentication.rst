@@ -10,9 +10,9 @@ General Steps
 
 This is for two-legged authentication
 
-# Obtain an authorization key
-# With authorization_key, client_key, client_secret, obtain access_token
-# Set access_token and client_key headers with all subsequent request for data
+#. Obtain an authorization key
+#. With authorization_key, client_key, client_secret, obtain access_token
+#. Set access_token and client_key headers with all subsequent request for data
 
 
 Authorization Key
