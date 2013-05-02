@@ -28,6 +28,7 @@ Get Feed by feed_name
     ``GET api.gradientx.com/a/feed/<feed_name|feed_id>``
 
 Optional query parameters
+
 * ``start_date`` 
 * ``end_date``
 
@@ -66,8 +67,10 @@ Response::
     } 
 
 Notes
+
 #. You can specify one or both query parameters
 #. Specifying only start_date will yield every batch report since that start_date
 #. Specifying only end_date will yield every batch report up until and including that end_date
 #. Specifying both will yield batch reports within that range inclusively
 #. Dates are treated as midnight of that day (e.g. 2013-02-13 => 2013-02-13 00:00:00)
+
