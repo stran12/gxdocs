@@ -98,5 +98,5 @@ Response::
 
 Notes
 
-#. Either the schema_id or *BOTH* ``feed_id`` && ``ver`` parameters are required.
+#. Either the schema_id or **BOTH** ``feed_id`` && ``ver`` parameters are required.
 
