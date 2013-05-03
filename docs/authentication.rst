@@ -58,7 +58,7 @@ Authenticated Request
 
 Set request headers:
 
-* ``authorization`` Set this to ``"Bearer <access_token>"``
+* ``oauth`` Set this to ``"Bearer <access_token>"``
 * ``client_id`` Provided by GradientX
 
 Here is a production test url to test your authentiation process
@@ -102,7 +102,7 @@ This Python script will authenticate and do a sample protected request
     # Url to test if you authenticated properly
     url = 'https://api.gradientx.com/a/oauth/test'
     headers = {
-            'authorization': 'Bearer {0}'.format(access_token), 
+            'oauth': 'Bearer {0}'.format(access_token), 
             'client_id': '02b4841bce64a338d2fba8b48a96045d'}
     r = s.get(url, headers=headers)
 
