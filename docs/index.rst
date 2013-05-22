@@ -13,6 +13,7 @@ Welcome to Gradient X API Documentation's documentation!
 
     authentication
     data_service
+    reporting
 
 
 
