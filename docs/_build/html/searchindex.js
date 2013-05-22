@@ -1,1 +1,0 @@
-Search.setIndex({envversion:42,terms:{index:0,search:0,modul:0,content:0,someth:0,chang:0,page:0,page1:0},objtypes:{},objnames:{},filenames:["index","page1"],titles:["Welcome to Gradient X API Documentation&#8217;s documentation!","Another Page"],objects:{},titleterms:{welcom:0,gradient:0,anoth:1,indic:0,api:0,tabl:0,document:0,page:1}})
