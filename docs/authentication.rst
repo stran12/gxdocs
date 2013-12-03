@@ -18,13 +18,13 @@ This is for two-legged authentication
 Authorization Key
 -----------------
 
-    ``GET https://api.gradientx.com/a/oauth/authorize``
+    ``GET https://api.gradientx.com/v1/oauth/authorize``
 
 Required Query String Parameters
 
 * ``client_id`` - This is your API key that Gradient X will provide
 * ``response_type`` - This will **ALWAYS** be ``"code"``
-* ``redirect_uri`` - Set this to ``"https://api.gradientx.com/a/oauth/mirror"`` for
+* ``redirect_uri`` - Set this to ``"https://api.gradientx.com/v1/oauth/mirror"`` for
   2-legged authorization
 
 Response::
@@ -35,14 +35,14 @@ Response::
 Access Token
 ------------
 
-    ``POST https://api.gradientx.com/a/oauth/token``
+    ``POST https://api.gradientx.com/v1/oauth/token``
 
 Required POST form-arguments
 
 * ``client_id`` - Same as the one used for authorization
 * ``client_secret`` - Provided by Gradient X
 * ``grant_type`` - Always set to ``"authorization_code"``
-* ``redirect_uri`` - Set to ``"https://api.gradientx.com/a/oauth/mirror"`` for
+* ``redirect_uri`` - Set to ``"https://api.gradientx.com/v1/oauth/mirror"`` for
   2-legged authorization
 * ``code`` - Authorization code obtained in the previous step
 
@@ -62,7 +62,7 @@ Set request headers:
 * ``client_id`` - Provided by GradientX
 
 Here is a production test url to test your authentiation process
-    ``GET https://api.gradientx.com/a/oauth/test``
+    ``GET https://api.gradientx.com/v1/oauth/test``
 
 
 Example Python Script
@@ -72,43 +72,43 @@ This Python script will authenticate and do a sample protected request
 
 .. code-block:: python
 
+    import json
     import requests
 
-    url = 'https://api.gradientx.com/a/oauth/authorize'
-    params = {'client_id': '8d2asdf38sa7d02f8dsafba8b48a96045d',
-            'redirect_uri': 'https://api.gradientx.com/a/oauth/mirror',
+    url = 'https://api.gradientx.com/v1/oauth/authorize'
+    params = {'client_id': 'fe01ce2a7fbac8fafaed7c982a04e229',
+            'redirect_uri': 'https://api.gradientx.com/v1/oauth/mirror',
               'response_type': 'code'}
 
-    session = requests.Session()
+    s = requests.Session()
 
-    r = session.get(url, params=params)
+    r = s.get(url, params=params)
     res = json.loads(r.text)
 
     code = res['code'] # Getting the authorization code from response
 
-    url = 'https://api.gradientx.com/a/oauth/token'
-    payload = { 'client_id': '8d2asdf38sa7d02f8dsafba8b48a96045d',
-            'client_secret': '7b2a6dcasdfg234f461ca6d06',
+    url = 'https://api.gradientx.com/v1/oauth/token'
+    payload = { 'client_id': 'fe01ce2a7fbac8fafaed7c982a04e229',
+            'client_secret': 'c047135100c85557ab45e20485f9ae9f',
             'grant_type': 'authorization_code',
-            'redirect_uri': 'https://api.gradientx.com/a/oauth/mirror',
+            'redirect_uri': 'https://api.gradientx.com/v1/oauth/mirror',
             'code': code
             }
-    r = s.post(url, data=payload)
+    r = s.post(url, data=json.dumps(payload))
 
     res = json.loads(r.text)
     access_token = res['access_token']
 
 
     # Url to test if you authenticated properly
-    url = 'https://api.gradientx.com/a/oauth/test'
+    url = 'https://api.gradientx.com/v1/oauth/test'
     headers = {
-            'oauth': 'Bearer {0}'.format(access_token), 
-            'client_id': '02b4841bce64a338d2fba8b48a96045d'}
+            'oauth': 'Bearer {0}'.format(access_token),
+            'client_id': 'fe01ce2a7fbac8fafaed7c982a04e229'}
     r = s.get(url, headers=headers)
 
     # Success?
     print r.text
     print r.status_code
-
 
 
